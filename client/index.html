@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bali Art Classic Item - Seni Klasik Bali & AI Mentoring</title>
+  <meta name="description" content="Pusat karya seni otentik Bali, lukisan, patung, seni 3D print, layanan custom commission, dan bimbingan mentoring seni 1-on-1 bertenaga AI." />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Markdown parser and sanitizer for Chatbot -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="brand-logo">
+        <div class="logo-icon">🏺</div>
+        <div class="logo-text">
+          <span class="logo-title">Bali Art</span>
+          <span class="logo-tag">Classic Item</span>
+        </div>
+      </a>
+      
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#hero" class="nav-link active">Beranda</a>
+        <a href="#products" class="nav-link">Koleksi Seni</a>
+        <a href="#commission" class="nav-link">Custom Art</a>
+        <a href="#services" class="nav-link">Mentoring & AI</a>
+        <a href="#artists" class="nav-link">Seniman Kami</a>
+        <a href="#testimonials" class="nav-link">Testimoni</a>
+        <a href="#contact" class="nav-link">Kontak</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#booking" class="btn btn-primary nav-cta">Book Session</a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section with Carousel -->
+  <section class="hero-section" id="hero">
+    <div class="hero-bg-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge">✨ Keindahan Klasik Bali Berpadu Inovasi Modern</div>
+      <h1 class="hero-title">
+        Mahakarya Seni Bali & <span class="text-gold">Mentoring Interaktif</span> Berbasis AI
+      </h1>
+      <p class="hero-desc">
+        Temukan keaslian lukisan kanvas tradisional, ukiran patung kayu & batu eksklusif, hingga kreasi seni 3D Print kontemporer. Dapatkan konsultasi kurasi & bimbingan seni 1-on-1 langsung bersama kurator dan asisten AI kami.
+      </p>
+      <div class="hero-buttons">
+        <a href="#products" class="btn btn-gold">Jelajahi Koleksi</a>
+        <a href="#booking" class="btn btn-outline-light">Daftar Sesi Mentoring</a>
+      </div>
+
+      <!-- Live Store Status Banner -->
+      <div class="store-status-pill">
+        <span class="status-dot online"></span>
+        <span>Galeri Buka: <strong>08.00 AM - 10.00 PM WITA</strong> • Seminyak, Bali</span>
+      </div>
+    </div>
+
+    <!-- Interactive Art Carousel -->
+    <div class="hero-carousel-wrapper">
+      <div class="hero-carousel" id="hero-carousel">
+        
+        <!-- Slide 1: Painting -->
+        <div class="carousel-slide active" data-slide="0">
+          <img src="https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=1000&q=80" alt="Lukisan Tradisional Bali" />
+          <div class="slide-caption">
+            <span class="slide-tag">Koleksi Lukisan</span>
+            <h3>Lukisan Kanvas Tradisional & Ubud Style</h3>
+            <p>Dibuat dengan pewarna alami dan detail goresan tangan magis khas maestro Bali.</p>
+          </div>
+        </div>
+
+        <!-- Slide 2: Statues & Sculptures -->
+        <div class="carousel-slide" data-slide="1">
+          <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1000&q=80" alt="Patung Ukir Kayu & Batu Bali" />
+          <div class="slide-caption">
+            <span class="slide-tag">Patung & Ukiran</span>
+            <h3>Patung Ukir Kayu Cendana & Batu Padas</h3>
+            <p>Pahatan detail bernilai filosofis tinggi warisan leluhur seniman Sukawati & Mas.</p>
+          </div>
+        </div>
+
+        <!-- Slide 3: 3D Print Art -->
+        <div class="carousel-slide" data-slide="2">
+          <img src="https://images.unsplash.com/photo-1582562124811-c09040d0a901?auto=format&fit=crop&w=1000&q=80" alt="3D Print Art Contemporary" />
+          <div class="slide-caption">
+            <span class="slide-tag">Digital Craftsmanship</span>
+            <h3>Kreasi Seni 3D Print & Hybrid Sculpture</h3>
+            <p>Perpaduan estetika ornamen Bali kuno dengan presisi teknologi komputasi 3D modern.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Carousel Navigation Controls -->
+      <button class="carousel-btn prev-btn" id="carousel-prev" aria-label="Slide sebelumnya">❮</button>
+      <button class="carousel-btn next-btn" id="carousel-next" aria-label="Slide berikutnya">❯</button>
+
+      <!-- Dots Indicators -->
+      <div class="carousel-dots" id="carousel-dots">
+        <span class="dot active" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products & Collections Section -->
+  <section class="section-container" id="products">
+    <div class="section-header">
+      <span class="section-sub">Koleksi Galeri Kami</span>
+      <h2 class="section-title">Karya Seni Unggulan & Eksklusif</h2>
+      <p class="section-desc">Pilihan kurasi terbaik dari para seniman lokal Bali dengan sertifikasi keaslian karya.</p>
+    </div>
+
+    <!-- Product Filter Tabs -->
+    <div class="filter-tabs">
+      <button class="filter-btn active" data-filter="all">Semua Karya</button>
+      <button class="filter-btn" data-filter="painting">Lukisan</button>
+      <button class="filter-btn" data-filter="statue">Patung & Ukiran</button>
+      <button class="filter-btn" data-filter="3dprint">3D Print Art</button>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="product-grid" id="product-grid">
+      
+      <!-- Item 1: Painting -->
+      <div class="product-card" data-category="painting">
+        <div class="product-badge">Best Seller</div>
+        <div class="product-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=600&q=80" alt="Tari Legong Klasik" />
+        </div>
+        <div class="product-info">
+          <span class="product-category">Lukisan Akrilik</span>
+          <h3 class="product-title">Nuansa Mistis Tari Legong Ubud</h3>
+          <p class="product-artist">Oleh I Wayan Sudarta</p>
+          <div class="product-footer">
+            <span class="product-price">Rp 4.850.000</span>
+            <button class="btn btn-sm btn-gold open-chat-prompt" data-prompt="Saya tertarik dengan lukisan Tari Legong Klasik, boleh tahu info dimensi dan cara pengirimannya?">Tanya AI</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2: Statue -->
+      <div class="product-card" data-category="statue">
+        <div class="product-badge">Masterpiece</div>
+        <div class="product-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1578321272176-b7bbc0679853?auto=format&fit=crop&w=600&q=80" alt="Patung Garuda Wisnu" />
+        </div>
+        <div class="product-info">
+          <span class="product-category">Pahatan Kayu Jati</span>
+          <h3 class="product-title">Patung Garuda Wisnu Kencana</h3>
+          <p class="product-artist">Oleh Made Sujana</p>
+          <div class="product-footer">
+            <span class="product-price">Rp 8.500.000</span>
+            <button class="btn btn-sm btn-gold open-chat-prompt" data-prompt="Halo, saya ingin menanyakan detail spesifikasi bahan dan sertifikasi patung Garuda Wisnu Kencana.">Tanya AI</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3: 3D Print -->
+      <div class="product-card" data-category="3dprint">
+        <div class="product-badge">New Hybrid</div>
+        <div class="product-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80" alt="3D Modern Barong" />
+        </div>
+        <div class="product-info">
+          <span class="product-category">Resin 3D Sculpture</span>
+          <h3 class="product-title">Topeng Barong Cyber-Neo Bali</h3>
+          <p class="product-artist">Oleh Putu Ryan & AI Lab</p>
+          <div class="product-footer">
+            <span class="product-price">Rp 3.200.000</span>
+            <button class="btn btn-sm btn-gold open-chat-prompt" data-prompt="Apakah seni 3D Print Topeng Barong Cyber-Neo ini bisa di-custom ukuran atau warnanya?">Tanya AI</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 4: Painting -->
+      <div class="product-card" data-category="painting">
+        <div class="product-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?auto=format&fit=crop&w=600&q=80" alt="Kehidupan Pedesaan Jatiluwih" />
+        </div>
+        <div class="product-info">
+          <span class="product-category">Lukisan Cat Minyak</span>
+          <h3 class="product-title">Harmoni Terasering Jatiluwih</h3>
+          <p class="product-artist">Oleh Ketut Wardana</p>
+          <div class="product-footer">
+            <span class="product-price">Rp 5.750.000</span>
+            <button class="btn btn-sm btn-gold open-chat-prompt" data-prompt="Berapa estimasi waktu pengiriman lukisan Terasering Jatiluwih ke luar pulau Bali?">Tanya AI</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 5: Statue -->
+      <div class="product-card" data-category="statue">
+        <div class="product-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=600&q=80" alt="Patung Dewi Saraswati" />
+        </div>
+        <div class="product-info">
+          <span class="product-category">Batu Paras Seminyak</span>
+          <h3 class="product-title">Arca Dewi Saraswati Klasik</h3>
+          <p class="product-artist">Oleh Nyoman Artha</p>
+          <div class="product-footer">
+            <span class="product-price">Rp 6.400.000</span>
+            <button class="btn btn-sm btn-gold open-chat-prompt" data-prompt="Saya ingin memesan Arca Dewi Saraswati Klasik untuk ornamen taman outdoor, apakah tahan cuaca?">Tanya AI</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 6: 3D Print -->
+      <div class="product-card" data-category="3dprint">
+        <div class="product-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=600&q=80" alt="3D Naga Basuki" />
+        </div>
+        <div class="product-info">
+          <span class="product-category">Polimer & Gold Leaf</span>
+          <h3 class="product-title">Relief Naga Basuki Poly-Gold</h3>
+          <p class="product-artist">Oleh Gede Adnyana</p>
+          <div class="product-footer">
+            <span class="product-price">Rp 3.900.000</span>
+            <button class="btn btn-sm btn-gold open-chat-prompt" data-prompt="Bisakah saya minta katalog detail untuk koleksi relief 3D print bernuansa gold?">Tanya AI</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Commissioned Art (Custom Art) Section -->
+  <section class="section-container bg-surface" id="commission">
+    <div class="commission-wrapper">
+      <div class="commission-info">
+        <span class="section-sub">Layanan Kustom</span>
+        <h2 class="section-title">Layanan Commissioned Arts</h2>
+        <p class="section-desc">
+          Punya ide konsep lukisan, ukuran patung spesifik untuk interior/arsitektur villa, atau model 3D kustom impian Anda? Maestro seniman kami siap mewujudkannya menjadi karya eksklusif berlisensi personal.
+        </p>
+
+        <div class="commission-steps">
+          <div class="step-card">
+            <div class="step-num">01</div>
+            <div>
+              <h4>Konsultasi Ide & Sketsa</h4>
+              <p>Diskusikan konsep, dimensi, dan media seni bersama kurator atau AI Assistant kami.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">02</div>
+            <div>
+              <h4>Proses Pengerjaan Transparan</h4>
+              <p>Dapatkan laporan video/foto berkala progres pembuatan langsung dari studio seniman.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">03</div>
+            <div>
+              <h4>Finishing & Pengiriman Aman</h4>
+              <p>Packing kayu standar ekspor dengan asuransi pengiriman lokal maupun internasional.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="commission-cta">
+          <a href="#booking" class="btn btn-primary">Pesan Karya Kustom</a>
+          <button class="btn btn-outline-dark open-chat-prompt" data-prompt="Bagaimana alur dan estimasi biaya pembuatan lukisan custom commission di Bali Art Classic Item?">Konsultasi via AI Chat</button>
+        </div>
+      </div>
+
+      <div class="commission-media">
+        <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=800&q=80" alt="Seniman sedang melukis custom art" class="commission-img" />
+        <div class="experience-card">
+          <span class="exp-number">15+</span>
+          <span class="exp-text">Tahun Melayani Kolektor Seni Dunia</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mentoring & Services Section -->
+  <section class="section-container" id="services">
+    <div class="section-header">
+      <span class="section-sub">Solusi Lengkap</span>
+      <h2 class="section-title">Layanan & Program Mentoring Kami</h2>
+      <p class="section-desc">Kombinasi pendampingan maestro seniman profesional dan kecepatan analisis kurasi berbasis kecerdasan buatan.</p>
+    </div>
+
+    <div class="services-grid">
+      
+      <div class="service-card">
+        <div class="service-icon">👨‍🏫</div>
+        <h3 class="service-title">1-on-1 Online Mentoring</h3>
+        <p class="service-text">
+          Sesi bimbingan intensif privat bersama maestro pelukis & pemahat Bali. Pelajari teknik ornamen klasik, perpaduan warna alami, hingga strategi pemasaran karya ke pasar global.
+        </p>
+        <ul class="service-features">
+          <li>✓ Kurikulum terarah pemula hingga mahir</li>
+          <li>✓ Bedah portofolio & teknik langsung</li>
+          <li>✓ Jadwal fleksibel via video call</li>
+        </ul>
+      </div>
+
+      <div class="service-card featured">
+        <div class="featured-badge">Paling Populer</div>
+        <div class="service-icon">🤖</div>
+        <h3 class="service-title">AI-Powered Art Assistant</h3>
+        <p class="service-text">
+          Asisten cerdas 24/7 untuk rekomendasi karya seni yang tepat untuk estetika ruangan Anda, kalkulasi harga estimasi karya seni, serta konsultasi cepat seputar toko kami.
+        </p>
+        <ul class="service-features">
+          <li>✓ Rekomendasi tema & style instan</li>
+          <li>✓ Penjelasan filosofi & makna karya</li>
+          <li>✓ Panduan perawatan material seni</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🏛️</div>
+        <h3 class="service-title">Kurasi & Pengadaan Galeri</h3>
+        <p class="service-text">
+          Layanan dekorasi seni terpadu untuk hotel bintang lima, villa, restoran, dan kantor. Kami sediakan paket instalasi seni lukis, arca taman, hingga seni 3D relief.
+        </p>
+        <ul class="service-features">
+          <li>✓ Konsultasi tata ruang artistik</li>
+          <li>✓ Sertifikasi keaslian karya (CoA)</li>
+          <li>✓ Layanan instalasi & garansi</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Meet Our Top Artists Section -->
+  <section class="section-container bg-surface" id="artists">
+    <div class="section-header">
+      <span class="section-sub">Maestro & Mentor</span>
+      <h2 class="section-title">Temui Seniman & Kurator Terbaik Kami</h2>
+      <p class="section-desc">Para kreator berdedikasi yang menggabungkan jiwa tradisi Bali dengan inovasi seni era digital.</p>
+    </div>
+
+    <div class="artists-grid">
+      
+      <div class="artist-card">
+        <div class="artist-avatar-wrapper">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" alt="I Wayan Sudarta" class="artist-avatar" />
+        </div>
+        <h3 class="artist-name">I Wayan Sudarta</h3>
+        <span class="artist-role">Master Painter • Ubud Classical Style</span>
+        <p class="artist-bio">
+          Pengalaman lebih dari 25 tahun dalam seni lukis kanvas Kamasan dan Batuan. Karyanya telah dipamerkan di berbagai galeri di Tokyo, Paris, dan Sydney.
+        </p>
+        <div class="artist-specialties">
+          <span>Lukis Kanvas</span>
+          <span>Pewarna Alami</span>
+          <span>Mentor Senior</span>
+        </div>
+      </div>
+
+      <div class="artist-card">
+        <div class="artist-avatar-wrapper">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80" alt="Made Sujana" class="artist-avatar" />
+        </div>
+        <h3 class="artist-name">Made Sujana</h3>
+        <span class="artist-role">Master Sculptor • Wood & Stone Carving</span>
+        <p class="artist-bio">
+          Pewaris generasi keempat pemahat kayu asal Desa Mas, Gianyar. Ahli dalam ukiran anatomi mitologi Bali dan patung monumen berskala besar.
+        </p>
+        <div class="artist-specialties">
+          <span>Pahatan Kayu Jati</span>
+          <span>Batu Paras</span>
+          <span>Ornamen Villa</span>
+        </div>
+      </div>
+
+      <div class="artist-card">
+        <div class="artist-avatar-wrapper">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" alt="Putu Ryan" class="artist-avatar" />
+        </div>
+        <h3 class="artist-name">Putu Ryan, S.Sn</h3>
+        <span class="artist-role">Digital Sculptor & 3D Art Director</span>
+        <p class="artist-bio">
+          Lulusan ISI Denpasar yang mempelopori penggabungan generative AI, 3D printing presisi tinggi, dan seni ukiran relief tradisional Bali.
+        </p>
+        <div class="artist-specialties">
+          <span>3D Sculpture</span>
+          <span>Generative Art</span>
+          <span>AI Mentoring</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Customer Testimonials Section -->
+  <section class="section-container" id="testimonials">
+    <div class="section-header">
+      <span class="section-sub">Kepuasan Pelanggan</span>
+      <h2 class="section-title">Apa Kata Klien & Peserta Mentoring</h2>
+      <p class="section-desc">Ulasan tulus dari para kolektor seni, pemilik villa, dan pembelajar seni di seluruh dunia.</p>
+    </div>
+
+    <div class="testimonials-grid">
+      
+      <div class="testimonial-card">
+        <div class="testi-rating">⭐⭐⭐⭐⭐</div>
+        <p class="testi-text">
+          "Patung Garuda Wisnu yang saya pesan untuk villa di Canggu melebihi ekspektasi! Detail pahatan kayunya sangat hidup dan proses pengiriman packing kayunya sangat aman."
+        </p>
+        <div class="testi-user">
+          <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=150&q=80" alt="Alexander Miller" />
+          <div>
+            <h4>Alexander Miller</h4>
+            <span>Villa Owner, Canggu Bali</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testi-rating">⭐⭐⭐⭐⭐</div>
+        <p class="testi-text">
+          "Program 1-on-1 mentoring bersama Bli Sudarta sangat membuka wawasan saya tentang filosofi garis seni Bali. Chatbot AI-nya juga sangat sigap menjawab pertanyaan harga kapan saja!"
+        </p>
+        <div class="testi-user">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80" alt="Sarah Wijaya" />
+          <div>
+            <h4>Sarah Wijaya</h4>
+            <span>Art Enthusiast & Designer, Jakarta</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testi-rating">⭐⭐⭐⭐⭐</div>
+        <p class="testi-text">
+          "Perpaduan seni 3D print dan motif ukir Bali-nya luar biasa unik. Menjadi centerpiece paling menarik di kantor kami di Singapura. Layanan customer responsif bintang 5!"
+        </p>
+        <div class="testi-user">
+          <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&w=150&q=80" alt="David Tan" />
+          <div>
+            <h4>David Tan</h4>
+            <span>Art Collector, Singapore</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Booking & Contact Section -->
+  <section class="section-container bg-surface" id="contact">
+    <div class="contact-wrapper" id="booking">
+      
+      <!-- Contact Info & Location -->
+      <div class="contact-info">
+        <span class="section-sub">Kunjungi & Hubungi Kami</span>
+        <h2 class="section-title">Galeri Bali Art Classic Item</h2>
+        <p class="section-desc">
+          Kami siap menyambut Anda langsung di galeri Seminyak atau melayani sesi konsultasi online secara global.
+        </p>
+
+        <div class="info-list">
+          <div class="info-item">
+            <div class="info-icon">📍</div>
+            <div>
+              <strong>Alamat Galeri:</strong>
+              <p>Jalan Raya Basangkasa No. 88, District Seminyak, Kuta, Badung Regency, Bali 80361, Indonesia</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">📞</div>
+            <div>
+              <strong>Telepon & WhatsApp:</strong>
+              <p><a href="tel:+628135567789">+62 813-5567-789</a></p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">⏰</div>
+            <div>
+              <strong>Jam Operasional:</strong>
+              <p>Buka setiap hari: 08.00 AM - 10.00 PM WITA</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="store-badge-card">
+          <div class="badge-icon">🏛️</div>
+          <div>
+            <h4>Kunjungan Privat & Kurasi Khusus</h4>
+            <p>Tersedia layanan pendampingan kurator untuk pembelian partai besar & proyek hospitality.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Booking Form -->
+      <div class="booking-card">
+        <h3>Book a Session / Jadwalkan Konsultasi</h3>
+        <p class="booking-subtitle">Isi formulir di bawah ini untuk konsultasi karya atau pendaftaran mentoring.</p>
+
+        <form id="booking-form" class="booking-form">
+          <div class="form-group">
+            <label for="book-name">Nama Lengkap</label>
+            <input type="text" id="book-name" placeholder="Contoh: Budi Santoso" required />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="book-phone">Nomor WhatsApp</label>
+              <input type="tel" id="book-phone" placeholder="+62 812..." required />
+            </div>
+            <div class="form-group">
+              <label for="book-type">Jenis Sesi / Layanan</label>
+              <select id="book-type" required>
+                <option value="mentoring">1-on-1 Mentoring Seni</option>
+                <option value="commission">Custom Commission Art</option>
+                <option value="purchase">Beli Koleksi Galeri</option>
+                <option value="curation">Kurasi Proyek Villa / Hotel</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="book-date">Preferensi Tanggal & Waktu</label>
+            <input type="datetime-local" id="book-date" required />
+          </div>
+
+          <div class="form-group">
+            <label for="book-note">Catatan Tambahan (Opsional)</label>
+            <textarea id="book-note" rows="3" placeholder="Ceritakan konsep karya atau materi mentoring yang Anda minati..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-gold btn-block" id="booking-submit-btn">Kirim Permintaan Booking</button>
+          <div id="booking-feedback" class="booking-feedback"></div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="logo-icon">🏺</div>
+        <div>
+          <h3>Bali Art Classic Item</h3>
+          <p>Pelestarian seni tradisi Bali dengan sentuhan teknologi modern & mentoring interaktif.</p>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <h4>Navigasi</h4>
+        <a href="#hero">Beranda</a>
+        <a href="#products">Koleksi Seni</a>
+        <a href="#commission">Custom Commission</a>
+        <a href="#services">Mentoring Seni</a>
+      </div>
+
+      <div class="footer-links">
+        <h4>Kontak & Lokasi</h4>
+        <p>Jl. Raya Basangkasa No. 88, Seminyak, Kuta, Badung - Bali</p>
+        <p>Telp: +62 813-5567-789</p>
+        <p>Open 08:00 AM - 10:00 PM</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Bali Art Classic Item. Seluruh Hak Cipta Dilindungi.</p>
+    </div>
+  </footer>
+
+  <!-- FLOATING CHATBOT WIDGET -->
+  <div class="floating-chat-container" id="floating-chat-container">
+    
+    <!-- Floating Trigger Button -->
+    <button class="chat-launcher-btn" id="chat-launcher-btn" aria-label="Buka Chatbot AI">
+      <div class="launcher-icon-open">💬</div>
+      <div class="launcher-icon-close">✕</div>
+      <span class="launcher-tooltip">Tanya AI Bali Art</span>
+      <span class="unread-pulse"></span>
+    </button>
+
+    <!-- Floating Chat Window Modal -->
+    <div class="floating-chat-window" id="floating-chat-window">
+      
+      <!-- Chat Window Header -->
+      <div class="chat-window-header">
+        <div class="chat-header-details">
+          <div class="bot-avatar">🤖</div>
+          <div>
+            <h4>Bali Art AI Assistant</h4>
+            <span class="bot-status"><span class="status-dot-sm"></span> Online • Siap Membantu</span>
+          </div>
+        </div>
+        <div class="chat-header-actions">
+          <button id="clear-btn" class="chat-action-btn" title="Hapus Riwayat Chat">🗑️</button>
+          <button id="close-chat-btn" class="chat-action-btn" title="Tutup Chat">✕</button>
+        </div>
+      </div>
+
+      <!-- Quick Suggestion Chips -->
+      <div class="quick-chips" id="quick-chips">
+        <button class="chip-btn" data-text="Bisa jelaskan lokasi alamat dan jam buka galeri Bali Art Classic Item?">📍 Lokasi & Jam Buka</button>
+        <button class="chip-btn" data-text="Berapa kisaran harga lukisan dan patung yang tersedia?">💰 Info Harga</button>
+        <button class="chip-btn" data-text="Bagaimana cara memesan karya custom commission?">🎨 Custom Art</button>
+        <button class="chip-btn" data-text="Bagaimana program 1-on-1 mentoring seni Bali dilakukan?">🧑‍🏫 Mentoring 1-on-1</button>
+      </div>
+
+      <!-- Chat Messages Scroll Container -->
+      <div id="chat-box" class="chat-box"></div>
+
+      <!-- Chat Input Form -->
+      <form id="chat-form" class="chat-input-form">
+        <input type="text" id="user-input" placeholder="Ketik pertanyaan Anda seputar Bali Art..." autocomplete="off" required />
+        <button type="submit" id="send-btn" aria-label="Kirim Pesan">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </form>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
