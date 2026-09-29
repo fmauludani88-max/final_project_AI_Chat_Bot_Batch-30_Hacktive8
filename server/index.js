@@ -1,23 +1,31 @@
 import 'dotenv/config';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import express from 'express';
 import multer from 'multer';
 import cors from 'cors';
 import { GoogleGenAI } from '@google/genai';
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+if (!process.env.GEMINI_API_KEY) {
+  console.error(
+    'GEMINI_API_KEY is not set. Copy server/.env.example to server/.env and fill it in.'
+  );
+  process.exit(1);
+}
+
 const app = express();
 const upload = multer();
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
-const GEMINI_MODEL = 'gemini-3.5-flash-lite';
+const GEMINI_MODEL = process.env.GEMINI_MODEL || 'gemini-3.5-flash-lite';
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.join(__dirname, '..', 'client')));
 
-const PORT = 3000;
-
-// app.get("/", (req, res) => {
-//   res.send("Hello,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,cls");
-// });
+const PORT = process.env.PORT || 3000;
 
 app.post('/generate-text', async (req, res) => {
   try {
@@ -82,5 +90,7 @@ app.post('/api/chat', async (req, res) => {
     });
   }
 });
+app.get('/health', (req, res) => res.json({ status: 'ok', model: GEMINI_MODEL }));
+
 app.listen(PORT, () => console.log(`server ready on http://localhost:${PORT}`));
 // Configure multer untuk menangani file upload
