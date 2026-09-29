@@ -159,7 +159,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const quickChips = document.querySelectorAll('.chip-btn');
   const openChatPrompts = document.querySelectorAll('.open-chat-prompt');
 
-  const API_URL = 'http://localhost:3000/api/chat';
+  const API_URL =
+    window.location.protocol === 'file:'
+      ? 'http://localhost:3000/api/chat'
+      : '/api/chat';
   const STORAGE_KEY = 'bali_art_chat_history';
 
   // Configure marked for Markdown rendering

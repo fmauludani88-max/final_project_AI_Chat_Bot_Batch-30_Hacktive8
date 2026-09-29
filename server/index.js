@@ -1,4 +1,6 @@
 import 'dotenv/config';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import express from 'express';
 import multer from 'multer';
 import cors from 'cors';
@@ -12,6 +14,11 @@ const GEMINI_MODEL = 'gemini-3.5-flash-lite';
 
 app.use(cors());
 app.use(express.json());
+app.use(
+  express.static(
+    path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'client')
+  )
+);
 
 const PORT = 3000;
 
